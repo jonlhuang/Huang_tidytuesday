@@ -16,7 +16,7 @@ eggproduction <- tuesdata$`egg-production`
 cagefreepercentages <- tuesdata$`cage-free-percentages`
 
 
-#double line graph
+#double line graph w/ labels to distinguis each 
 
 eggproduction %>% 
    pivot_longer(cols = c(n_hens:n_eggs),
@@ -45,6 +45,8 @@ ggplot(aes(x = observed_month,
        linetype = "Eggs vs Hen")+
   theme_classic()
   
+ggsave(here("20230411_egg_production","output", "egg_production.pdf"),
+       width = 15, height = 10)
 
 
                      
